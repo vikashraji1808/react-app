@@ -38,7 +38,7 @@ function Todo(){
             </tr>
         </table> */}
     {/* <AddTodo setIteam={setUser} Iteam={User}/> */}
-    <p>Timer</p>
+    <p>TimerApp</p>
     <code>{timer}</code><br></br>
     <button type="button" onClick={()=>setTimerstart(!IsTimerStart)}>{IsTimerStart? 'stop':'start'}</button>
     <button type="button" onClick={async ()=>{await setTimerstart(false);setTimer(0)}}>reset</button>

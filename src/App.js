@@ -1,63 +1,24 @@
-
-import './App.css';
-import {useState,useEffect} from 'react';
-// import Header from './header';
-import Todos from './todos.js/index';
-import User from './todos.js/user';
-import Login from './login';
-import Header from './header'
+import logo from "./logo.svg";
+import "@aws-amplify/ui-react/styles.css";
 import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+  withAuthenticator,
+  Button,
+  Heading,
+  Image,
+  View,
+  Card,
+} from "@aws-amplify/ui-react";
 
-
-
-
-
-
-function App() {
-  let [name,changeName]=useState("agaram")
-  let [IsLogged,setIsLogged]=useState({
-    status:false,
-    name:""
-  })
-  const router = createBrowserRouter([
-    // {
-    //   path: "/",
-    //   element: <Header />,
-    // },
-    // {
-    //   path: "/login",
-    //   element: <Login IsLogged={IsLogged} setIsLogged={setIsLogged}/>,
-    // },
-    {
-      path: "/",
-      element: <User />,
-    },
-    // {
-    //   path: "/todos",
-    //   element: <Todos IsLogged={IsLogged} setIsLogged={setIsLogged}/>,
-    // },
-  ]);
-  // useEffect(()=>{
-  //   alert(1)
-  // })
+function App({ signOut }) {
   return (
-    <div className="App">
-      {/* <Header name={name} place="nagercoil" newname={changeName} /> */}
-      {/* < Todos />
-      <User /> */}
-      <RouterProvider  router={router}/>
-      
-
-
-     
-    </div>
+    <View className="App">
+      <Card>
+        <Image src={logo} className="App-logo" alt="logo" />
+        <Heading level={1}>We now have Auth!</Heading>
+      </Card>
+      <Button onClick={signOut}>Sign Out</Button>
+    </View>
   );
 }
 
-export default App;
-
-
-
+export default withAuthenticator(App);
