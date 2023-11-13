@@ -1,0 +1,14 @@
+{
+  "resourceName": "s37d025aa9",
+  "policyUUID": "7d025aa9",
+  "bucketName": "videos",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
